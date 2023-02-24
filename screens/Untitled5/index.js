@@ -14,7 +14,12 @@ const Untitled5 = ({
   useEffect(() => {
     dispatch(catpets_get_fact_read());
   }, []);
-  const Catpets_response_get_GetFacts = useSelector(state => state.Catpets_response_get_GetFacts);
+    // entities update to get the code working
+    const { entities: Catpets_response_get_GetFacts } = useSelector(
+      state => state.Catpets_response_get_GetFacts
+    );
+
+  // Added optional chaining to  Catpets_response_get_GetFacts[0].fact to avoid undefined check
   return <SafeAreaView style={styles.safeArea}>
         <ScrollView contentContainerStyle={{
       flex: 1,
@@ -25,8 +30,8 @@ const Untitled5 = ({
     }}>
         
           <View style={styles.column1}><Text style={styles.kPuNrOfF}>Cat Fact of The Day</Text></View>
-          <View style={styles.column2}><Text style={styles.BflSbOep}>{Catpets_response_get_GetFacts[0].fact}</Text><Pressable onPress={() => navigation.navigate("Untitled6", {
-          fact: Catpets_response_get_GetFacts[0].fact
+          <View style={styles.column2}><Text style={styles.BflSbOep}>{Catpets_response_get_GetFacts[0]?.fact}</Text><Pressable onPress={() => navigation.navigate("Untitled6", {
+          fact: Catpets_response_get_GetFacts[0]?.fact
         })}><View style={styles.WzQJBiRn}><Text style={styles.IXYEdzez}>Next</Text></View></Pressable></View>
           
         
@@ -69,9 +74,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#728fcb",
     borderRadius: 8,
     color: "#777777",
-    position: "absolute",
-    left: 99,
-    top: 108.5
+    alignSelf: "center"
   },
   IXYEdzez: {
     width: 100,

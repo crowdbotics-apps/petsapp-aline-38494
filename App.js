@@ -29,7 +29,7 @@ const getNavigation = (modules, screens, initialRoute) => {
       headerShown: true
     };
     return <NavigationContainer>
-        <Stack.Navigator initialRouteName={initialRoute} screenOptions={screenOptions}>
+        <Stack.Navigator initialRouteName="Untitled5" screenOptions={screenOptions}>
           {routes}
         </Stack.Navigator>
       </NavigationContainer>;
