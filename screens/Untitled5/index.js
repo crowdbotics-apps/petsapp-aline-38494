@@ -25,7 +25,9 @@ const Untitled5 = ({
     }}>
         
           <View style={styles.column1}><Text style={styles.kPuNrOfF}>Cat Fact of The Day</Text></View>
-          <View style={styles.column2}><Text style={styles.BflSbOep}>{Catpets_response_get_GetFacts[0].fact}</Text><Pressable onPress={() => navigation.navigate("Untitled6", {})}><View style={styles.WzQJBiRn}><Text style={styles.IXYEdzez}>Next</Text></View></Pressable></View>
+          <View style={styles.column2}><Text style={styles.BflSbOep}>{Catpets_response_get_GetFacts[0].fact}</Text><Pressable onPress={() => navigation.navigate("Untitled6", {
+          fact: Catpets_response_get_GetFacts[0].fact
+        })}><View style={styles.WzQJBiRn}><Text style={styles.IXYEdzez}>Next</Text></View></Pressable></View>
           
         
         </ScrollView>
