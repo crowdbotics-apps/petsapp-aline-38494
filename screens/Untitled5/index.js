@@ -13,13 +13,12 @@ const Untitled5 = ({
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(catpets_get_fact_read());
-  }, []);
-    // entities update to get the code working
-    const { entities: Catpets_response_get_GetFacts } = useSelector(
-      state => state.Catpets_response_get_GetFacts
-    );
+  }, []); // entities update to get the code working
 
-  // Added optional chaining to  Catpets_response_get_GetFacts[0].fact to avoid undefined check
+  const {
+    entities: Catpets_response_get_GetFacts
+  } = useSelector(state => state.Catpets_response_get_GetFacts); // Added optional chaining to  Catpets_response_get_GetFacts[0].fact to avoid undefined check
+
   return <SafeAreaView style={styles.safeArea}>
         <ScrollView contentContainerStyle={{
       flex: 1,
