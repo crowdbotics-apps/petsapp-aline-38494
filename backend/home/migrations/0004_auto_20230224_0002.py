@@ -4,29 +4,28 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('home', '0003_petowner'),
+        ("home", "0003_petowner"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='pet',
-            name='price',
+            model_name="pet",
+            name="price",
         ),
         migrations.AddField(
-            model_name='pet',
-            name='birth_date',
+            model_name="pet",
+            name="birth_date",
             field=models.DateField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='pet',
-            name='name',
+            model_name="pet",
+            name="name",
             field=models.CharField(blank=True, max_length=50),
         ),
         migrations.AlterField(
-            model_name='pet',
-            name='type',
+            model_name="pet",
+            name="type",
             field=models.CharField(blank=True, max_length=50),
         ),
     ]

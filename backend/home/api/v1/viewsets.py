@@ -1,6 +1,4 @@
 from rest_framework import viewsets
-from home.models import Pet
-from .serializers import PetSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -32,8 +30,3 @@ class LoginViewSet(ViewSet):
         token, created = Token.objects.get_or_create(user=user)
         user_serializer = UserSerializer(user)
         return Response({"token": token.key, "user": user_serializer.data})
-
-class PetViewSet(viewsets.ModelViewSet):
-    serializer_class = PetSerializer
-    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
-    queryset = Pet.objects.all()
